@@ -1,15 +1,6 @@
 const SUPPORTED_LANGS = ['en','zh','zh-TW','ja','ko','de','ru','es'];
 const DEFAULT_LANG = 'en';
-
-const PATH_TO_LANG = {
-  '/zh/': 'zh',
-  '/zh-tw/': 'zh-TW',
-  '/ja/': 'ja',
-  '/ko/': 'ko',
-  '/de/': 'de',
-  '/ru/': 'ru',
-  '/es/': 'es'
-};
+const MARKER = '/yarn-tree-calculator';
 
 const LANG_TO_PATH = {
   'en': '/',
@@ -22,22 +13,51 @@ const LANG_TO_PATH = {
   'es': '/es/'
 };
 
+const SEG_TO_LANG = {
+  'zh': 'zh',
+  'zh-tw': 'zh-TW',
+  'ja': 'ja',
+  'ko': 'ko',
+  'de': 'de',
+  'ru': 'ru',
+  'es': 'es'
+};
+
 let currentLang = DEFAULT_LANG;
 let translations = {};
 const cache = {};
+
+// 动态获取项目前缀：
+// - 通过 toolara.dev/yarn-tree-calculator/xxx 访问 → 返回 '/yarn-tree-calculator'
+// - 直接访问 yarn-tree-calculator.lvyafei2026.workers.dev/xxx → 返回 ''
+function getBase() {
+  const p = window.location.pathname;
+  const idx = p.indexOf(MARKER);
+  if (idx !== -1) return p.slice(0, idx + MARKER.length);
+  return '';
+}
 
 function detectPageLang() {
   if (window.__FORCE_LANG__ && SUPPORTED_LANGS.includes(window.__FORCE_LANG__)) {
     return window.__FORCE_LANG__;
   }
-  const path = window.location.pathname.replace(/\/$/, '') + '/';
-  if (PATH_TO_LANG[path]) return PATH_TO_LANG[path];
+
+  const p = window.location.pathname;
+  const base = getBase();
+  const rest = base ? p.slice(base.length) : p;
+  const segs = rest.split('/').filter(Boolean);
+
+  if (segs.length > 0) {
+    const first = segs[0].toLowerCase();
+    if (SEG_TO_LANG[first]) return SEG_TO_LANG[first];
+  }
   return DEFAULT_LANG;
 }
 
 async function loadLocale(lang) {
   if (cache[lang]) return cache[lang];
-  const res = await fetch('/locales/' + lang + '.json');
+  const base = getBase();
+  const res = await fetch(base + '/locales/' + lang + '.json');
   if (!res.ok) throw new Error('Failed to load locale: ' + lang);
   const data = await res.json();
   cache[lang] = data;
@@ -67,14 +87,8 @@ async function initPage() {
 
 function setLang(lang) {
   if (!SUPPORTED_LANGS.includes(lang)) lang = DEFAULT_LANG;
-  
-  // 获取当前路径的第一段作为子目录（例如 /gfr-calculator 或 /code-tools）
-  const pathSegments = window.location.pathname.split('/').filter(Boolean);
-  const subdir = pathSegments.length > 0 ? '/' + pathSegments[0] : '';
-  
-  // 拼接子目录和语言路径
-  const targetPath = subdir + (LANG_TO_PATH[lang] || '/');
-  window.location.href = targetPath;
+  const base = getBase();
+  window.location.href = base + (LANG_TO_PATH[lang] || '/');
 }
 
 document.addEventListener('DOMContentLoaded', initPage);
