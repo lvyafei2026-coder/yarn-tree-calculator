@@ -52,7 +52,7 @@ function buildIndexHtml(forceLang, htmlLang, canonicalPath) {
 }
 <\/script>
 
-${forceLine}<link rel="stylesheet" href="css/style.css">
+${forceLine}<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
@@ -204,8 +204,8 @@ ${forceLine}<link rel="stylesheet" href="css/style.css">
 
 <footer class="footer" data-i18n="footer">Runs entirely in your browser. No data is collected or stored.</footer>
 
-<script src="js/i18n.js"><\/script>
-<script src="js/calculator.js"><\/script>
+<script src="/js/i18n.js"><\/script>
+<script src="/js/calculator.js"><\/script>
 </body>
 </html>`;
 }
