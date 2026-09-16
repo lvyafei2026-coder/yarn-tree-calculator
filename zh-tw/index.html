@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yarn Calculator — Estimate How Much Yarn You Need for Any Project</title>
+<meta name="description" content="Free yarn calculator. Estimate how many skeins of yarn you need for sweaters, blankets, scarves and more. Works with any yarn weight and stitch pattern.">
+<meta name="keywords" content="yarn calculator, yarn yardage calculator, how much yarn do i need, yarn estimator, knitting yarn calculator, crochet yarn calculator">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="theme-color" content="#8b5a3c">
+
+<link rel="canonical" href="https://toolara.dev/yarn-tree-calculator/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://toolara.dev/yarn-tree-calculator/">
+<link rel="alternate" hreflang="zh-Hans" href="https://toolara.dev/yarn-tree-calculator/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://toolara.dev/yarn-tree-calculator/zh-tw/">
+<link rel="alternate" hreflang="ja" href="https://toolara.dev/yarn-tree-calculator/ja/">
+<link rel="alternate" hreflang="ko" href="https://toolara.dev/yarn-tree-calculator/ko/">
+<link rel="alternate" hreflang="de" href="https://toolara.dev/yarn-tree-calculator/de/">
+<link rel="alternate" hreflang="ru" href="https://toolara.dev/yarn-tree-calculator/ru/">
+<link rel="alternate" hreflang="es" href="https://toolara.dev/yarn-tree-calculator/es/">
+<link rel="alternate" hreflang="x-default" href="https://toolara.dev/yarn-tree-calculator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yarn Calculator — Estimate How Much Yarn You Need">
+<meta property="og:description" content="Free yarn calculator for knitters and crocheters. Estimate skeins needed for any project.">
+<meta property="og:url" content="https://toolara.dev/yarn-tree-calculator/zh-tw/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Yarn Tree Calculator",
+  "url": "https://toolara.dev/yarn-tree-calculator/zh-tw/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "description": "Free yarn calculator that estimates the yardage and skeins needed for knitting and crochet projects.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<script>window.__FORCE_LANG__ = 'zh-TW';</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="lang-switch">
+    <select id="langSelect" onchange="setLang(this.value)" aria-label="Language">
+      <option value="en">English</option>
+      <option value="zh">简体中文</option>
+      <option value="zh-TW">繁體中文</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="de">Deutsch</option>
+      <option value="ru">Русский</option>
+      <option value="es">Español</option>
+    </select>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-badge">🧶 Knitting & Crochet</div>
+    <h1 data-i18n="title">Yarn Calculator</h1>
+    <p data-i18n="subtitle">Estimate how many skeins of yarn you need for any project — sweaters, blankets, scarves, and more.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <h2 class="visually-hidden" data-i18n="calcHeading">Calculator</h2>
+
+    <div class="row">
+      <div>
+        <label for="width" data-i18n="widthLabel">Width (cm)</label>
+        <input type="number" id="width" min="1" step="1" placeholder="50" inputmode="decimal">
+      </div>
+      <div>
+        <label for="height" data-i18n="heightLabel">Height (cm)</label>
+        <input type="number" id="height" min="1" step="1" placeholder="60" inputmode="decimal">
+      </div>
+    </div>
+
+    <label for="weight" data-i18n="weightLabel">Yarn weight (CYC standard)</label>
+    <select id="weight">
+      <option value="lace" data-i18n="weightLace">0 — Lace</option>
+      <option value="superfine" data-i18n="weightSuperfine">1 — Super Fine (Sock)</option>
+      <option value="fine" data-i18n="weightFine">2 — Fine (Sport)</option>
+      <option value="light" data-i18n="weightLight">3 — Light (DK)</option>
+      <option value="medium" selected data-i18n="weightMedium">4 — Medium (Worsted)</option>
+      <option value="bulky" data-i18n="weightBulky">5 — Bulky (Chunky)</option>
+      <option value="superbulky" data-i18n="weightSuperbulky">6 — Super Bulky</option>
+    </select>
+
+    <label for="stitch" data-i18n="stitchLabel">Stitch pattern</label>
+    <select id="stitch">
+      <option value="stockinette" selected data-i18n="stitchStockinette">Stockinette (smooth)</option>
+      <option value="garter" data-i18n="stitchGarter">Garter stitch</option>
+      <option value="ribbing" data-i18n="stitchRibbing">Ribbing (1x1, 2x2)</option>
+      <option value="seed" data-i18n="stitchSeed">Seed stitch</option>
+      <option value="cable" data-i18n="stitchCable">Cable</option>
+      <option value="brioche" data-i18n="stitchBrioche">Brioche / Fisherman</option>
+      <option value="lace" data-i18n="stitchLace">Lace / Openwork</option>
+    </select>
+
+    <label for="skeinYardage" data-i18n="skeinLabel">Yards per skein (check your yarn label)</label>
+    <input type="number" id="skeinYardage" min="10" step="10" placeholder="200" value="200" inputmode="decimal">
+
+    <button class="calc" type="button" onclick="calculate()" data-i18n="calcBtn">Calculate yarn needed</button>
+
+    <div id="result" role="region" aria-live="polite">
+      <div class="result-label" data-i18n="resultLabel">You'll need approximately</div>
+      <div class="yardage"><span id="totalYards">—</span></div>
+      <div class="freq-note" id="skeinNote"></div>
+
+      <div class="breakdown">
+        <div class="bd-row"><span data-i18n="bdArea">Project area</span><strong id="bdArea">—</strong></div>
+        <div data-i18n="bdWeight">Yarn weight</div>
+        <div data-i18n="bdStitch">Stitch pattern</div>
+        <div data-i18n="bdBuffer">Buffer (10% added)</div>
+        <div data-i18n="bdSkeins">Skeins to buy</div>
+      </div>
+      <div class="result-disclaimer" data-i18n="resultDisclaimer">Estimate only. Actual yarn usage varies by gauge, tension, and individual knitting style. Always buy one extra skein for safety.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="whatIsTitle">How yarn usage is estimated</h2>
+    <p data-i18n="whatIsText">Yarn consumption depends on three main factors: the total area of your project, the weight (thickness) of the yarn, and the stitch pattern. Denser, more textured stitches like cables and brioche use significantly more yarn per square centimeter than smooth stockinette or open lace.</p>
+  </section>
+
+  <section>
+    <h2 data-i18n="weightsTitle">Yarn weight categories</h2>
+    <table>
+      <thead>
+        <tr><th data-i18n="thCat">Category</th><th data-i18n="thName">Common name</th><th data-i18n="thGauge">Typical gauge</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0</td><td data-i18n="weightLace">Lace</td><td>33–40 sts / 10cm</td></tr>
+        <tr><td>1</td><td data-i18n="weightSuperfine">Super Fine / Sock</td><td>27–32 sts / 10cm</td></tr>
+        <tr><td>2</td><td data-i18n="weightFine">Fine / Sport</td><td>23–26 sts / 10cm</td></tr>
+        <tr><td>3</td><td data-i18n="weightLight">Light / DK</td><td>21–24 sts / 10cm</td></tr>
+        <tr><td>4</td><td data-i18n="weightMedium">Medium / Worsted</td><td>16–20 sts / 10cm</td></tr>
+        <tr><td>5</td><td data-i18n="weightBulky">Bulky / Chunky</td><td>12–15 sts / 10cm</td></tr>
+        <tr><td>6</td><td data-i18n="weightSuperbulky">Super Bulky</td><td>7–11 sts / 10cm</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2 data-i18n="patternsTitle">How stitch pattern affects yarn usage</h2>
+    <p data-i18n="patternsText">Different stitch patterns consume yarn at very different rates. Compared to a smooth stockinette base:</p>
+    <ul>
+      <li data-i18n="patGarter"><strong>Garter stitch:</strong> +5%</li>
+      <li data-i18n="patRibbing"><strong>Ribbing (1x1, 2x2):</strong> +15%</li>
+      <li data-i18n="patSeed"><strong>Seed stitch:</strong> +20%</li>
+      <li data-i18n="patCable"><strong>Cable:</strong> +35%</li>
+      <li data-i18n="patBrioche"><strong>Brioche / Fisherman:</strong> +60%</li>
+      <li data-i18n="patLace"><strong>Lace / Openwork:</strong> -15%</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 data-i18n="howToTitle">How to use this calculator</h2>
+    <ol>
+      <li data-i18n="howTo1">Enter the finished width and height of your project in centimeters.</li>
+      <li data-i18n="howTo2">Select your yarn weight from the CYC standard category (check your yarn label).</li>
+      <li data-i18n="howTo3">Choose the stitch pattern that dominates your project.</li>
+      <li data-i18n="howTo4">Enter the yardage per skein from your yarn label (this varies by brand).</li>
+      <li data-i18n="howTo5">Click "Calculate yarn needed" to see total yardage and skeins to buy.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2 data-i18n="faqTitle">Frequently asked questions</h2>
+    <h3 data-i18n="faq1q">How much yarn do I need for a sweater?</h3>
+    <p data-i18n="faq1a">An adult medium sweater in worsted weight yarn typically requires 1,200–1,800 yards. In bulky weight, 800–1,200 yards. In fingering weight, 1,800–2,500 yards. The exact amount depends on size, length, and stitch pattern.</p>
+
+    <h3 data-i18n="faq2q">How many yards are in a skein of yarn?</h3>
+    <p data-i18n="faq2a">It varies widely by brand and weight. Common yardages: Lace 400–800, Fingering 350–450, Sport 250–350, DK 200–300, Worsted 150–250, Bulky 100–150, Super Bulky 60–100 yards per skein. Always check your yarn label.</p>
+
+    <h3 data-i18n="faq3q">Should I add a buffer?</h3>
+    <p data-i18n="faq3a">Yes. This calculator already adds a 10% buffer. Professional knitters usually recommend buying one extra skein of the same dye lot, especially for large projects, because running out mid-project with a different dye lot can create visible color differences.</p>
+
+    <h3 data-i18n="faq4q">Does crochet use more yarn than knitting?</h3>
+    <p data-i18n="faq4a">Yes, generally 25–30% more yarn than knitting for the same surface area. Crochet stitches are taller and denser. If you plan to crochet a pattern designed for knitting, add about 30% to the estimate.</p>
+
+    <h3 data-i18n="faq5q">Why does my finished project weigh more than predicted?</h3>
+    <p data-i18n="faq5a">Common causes: looser or tighter gauge than expected, blocking that stretches the fabric, or a heavier stitch pattern than estimated. If you're following a pattern, always knit a gauge swatch and compare your actual yarn usage after the first few rows.</p>
+
+    <div class="disclaimer" data-i18n="disclaimer"><strong>Note:</strong> This is an estimate. For critical projects, always buy an extra skein and work a gauge swatch to confirm your personal yardage consumption.</div>
+  </section>
+</main>
+
+<footer class="footer" data-i18n="footer">Runs entirely in your browser. No data is collected or stored.</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/calculator.js"></script>
+</body>
+</html>
