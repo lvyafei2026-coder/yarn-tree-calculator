@@ -68,7 +68,8 @@ function applyTranslations(t) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (t[key] === undefined) return;
-    if (key === 'disclaimer') el.innerHTML = t[key];
+    // A value that carries markup must be written as HTML, or the emphasis is lost.
+    if (/<\/?(?:strong|em|b|i|br)\b/i.test(t[key])) el.innerHTML = t[key];
     else el.textContent = t[key];
   });
 }
