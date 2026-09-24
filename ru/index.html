@@ -61,138 +61,138 @@
   </div>
   <div class="hero-inner">
     <div class="hero-badge">🧶 Knitting & Crochet</div>
-    <h1 data-i18n="title">Yarn Calculator</h1>
-    <p data-i18n="subtitle">Estimate how many skeins of yarn you need for any project — sweaters, blankets, scarves, and more.</p>
+    <h1 data-i18n="title">Калькулятор пряжи</h1>
+    <p data-i18n="subtitle">Рассчитайте, сколько мотков пряжи нужно для свитеров, пледов, шарфов и других проектов.</p>
   </div>
 </header>
 
 <main class="wrap">
   <section class="card">
-    <h2 class="visually-hidden" data-i18n="calcHeading">Calculator</h2>
+    <h2 class="visually-hidden" data-i18n="calcHeading">Калькулятор</h2>
 
     <div class="row">
       <div>
-        <label for="width" data-i18n="widthLabel">Width (cm)</label>
+        <label for="width" data-i18n="widthLabel">Ширина (см)</label>
         <input type="number" id="width" min="1" step="1" placeholder="50" inputmode="decimal">
       </div>
       <div>
-        <label for="height" data-i18n="heightLabel">Height (cm)</label>
+        <label for="height" data-i18n="heightLabel">Высота (см)</label>
         <input type="number" id="height" min="1" step="1" placeholder="60" inputmode="decimal">
       </div>
     </div>
 
-    <label for="weight" data-i18n="weightLabel">Yarn weight (CYC standard)</label>
+    <label for="weight" data-i18n="weightLabel">Толщина пряжи (стандарт CYC)</label>
     <select id="weight">
-      <option value="lace" data-i18n="weightLace">0 — Lace</option>
-      <option value="superfine" data-i18n="weightSuperfine">1 — Super Fine (Sock)</option>
-      <option value="fine" data-i18n="weightFine">2 — Fine (Sport)</option>
-      <option value="light" data-i18n="weightLight">3 — Light (DK)</option>
-      <option value="medium" selected data-i18n="weightMedium">4 — Medium (Worsted)</option>
-      <option value="bulky" data-i18n="weightBulky">5 — Bulky (Chunky)</option>
-      <option value="superbulky" data-i18n="weightSuperbulky">6 — Super Bulky</option>
+      <option value="lace" data-i18n="weightLace">0 — Кружевная</option>
+      <option value="superfine" data-i18n="weightSuperfine">1 — Сверхтонкая (носочная)</option>
+      <option value="fine" data-i18n="weightFine">2 — Тонкая (спортивная)</option>
+      <option value="light" data-i18n="weightLight">3 — Лёгкая (DK)</option>
+      <option value="medium" selected data-i18n="weightMedium">4 — Средняя (Worsted)</option>
+      <option value="bulky" data-i18n="weightBulky">5 — Объёмная (Chunky)</option>
+      <option value="superbulky" data-i18n="weightSuperbulky">6 — Сверхобъёмная</option>
     </select>
 
-    <label for="stitch" data-i18n="stitchLabel">Stitch pattern</label>
+    <label for="stitch" data-i18n="stitchLabel">Узор вязания</label>
     <select id="stitch">
-      <option value="stockinette" selected data-i18n="stitchStockinette">Stockinette (smooth)</option>
-      <option value="garter" data-i18n="stitchGarter">Garter stitch</option>
-      <option value="ribbing" data-i18n="stitchRibbing">Ribbing (1x1, 2x2)</option>
-      <option value="seed" data-i18n="stitchSeed">Seed stitch</option>
-      <option value="cable" data-i18n="stitchCable">Cable</option>
-      <option value="brioche" data-i18n="stitchBrioche">Brioche / Fisherman</option>
-      <option value="lace" data-i18n="stitchLace">Lace / Openwork</option>
+      <option value="stockinette" selected data-i18n="stitchStockinette">Лицевая гладь</option>
+      <option value="garter" data-i18n="stitchGarter">Платочная вязка</option>
+      <option value="ribbing" data-i18n="stitchRibbing">Резинка (1x1, 2x2)</option>
+      <option value="seed" data-i18n="stitchSeed">Жемчужный узор</option>
+      <option value="cable" data-i18n="stitchCable">Косы</option>
+      <option value="brioche" data-i18n="stitchBrioche">Бриошь / патентная</option>
+      <option value="lace" data-i18n="stitchLace">Кружево / ажур</option>
     </select>
 
-    <label for="skeinYardage" data-i18n="skeinLabel">Yards per skein (check your yarn label)</label>
+    <label for="skeinYardage" data-i18n="skeinLabel">Метров в мотке (проверьте этикетку)</label>
     <input type="number" id="skeinYardage" min="10" step="10" placeholder="200" value="200" inputmode="decimal">
 
-    <button class="calc" type="button" onclick="calculate()" data-i18n="calcBtn">Calculate yarn needed</button>
+    <button class="calc" type="button" onclick="calculate()" data-i18n="calcBtn">Рассчитать необходимое количество</button>
 
     <div id="result" role="region" aria-live="polite">
-      <div class="result-label" data-i18n="resultLabel">You'll need approximately</div>
+      <div class="result-label" data-i18n="resultLabel">Вам понадобится примерно</div>
       <div class="yardage"><span id="totalYards">—</span></div>
       <div class="freq-note" id="skeinNote"></div>
 
       <div class="breakdown">
-        <div class="bd-row"><span data-i18n="bdArea">Project area</span><strong id="bdArea">—</strong></div>
-        <div data-i18n="bdWeight">Yarn weight</div>
-        <div data-i18n="bdStitch">Stitch pattern</div>
-        <div data-i18n="bdBuffer">Buffer (10% added)</div>
-        <div data-i18n="bdSkeins">Skeins to buy</div>
+        <div class="bd-row"><span data-i18n="bdArea">Площадь проекта</span><strong id="bdArea">—</strong></div>
+        <div data-i18n="bdWeight">Толщина пряжи</div>
+        <div data-i18n="bdStitch">Узор</div>
+        <div data-i18n="bdBuffer">Запас (добавлено 10%)</div>
+        <div data-i18n="bdSkeins">Купить мотков</div>
       </div>
-      <div class="result-disclaimer" data-i18n="resultDisclaimer">Estimate only. Actual yarn usage varies by gauge, tension, and individual knitting style. Always buy one extra skein for safety.</div>
+      <div class="result-disclaimer" data-i18n="resultDisclaimer">Только оценка. Фактический расход зависит от плотности, натяжения и индивидуального стиля. Всегда покупайте лишний моток.</div>
     </div>
   </section>
 
   <section>
-    <h2 data-i18n="whatIsTitle">How yarn usage is estimated</h2>
-    <p data-i18n="whatIsText">Yarn consumption depends on three main factors: the total area of your project, the weight (thickness) of the yarn, and the stitch pattern. Denser, more textured stitches like cables and brioche use significantly more yarn per square centimeter than smooth stockinette or open lace.</p>
+    <h2 data-i18n="whatIsTitle">Как оценивается расход пряжи</h2>
+    <p data-i18n="whatIsText">Расход пряжи зависит от трёх основных факторов: общей площади проекта, толщины пряжи и узора. Плотные, рельефные узоры (косы, бриошь) расходуют значительно больше пряжи на квадратный сантиметр, чем гладь или ажур.</p>
   </section>
 
   <section>
-    <h2 data-i18n="weightsTitle">Yarn weight categories</h2>
+    <h2 data-i18n="weightsTitle">Категории толщины пряжи</h2>
     <table>
       <thead>
-        <tr><th data-i18n="thCat">Category</th><th data-i18n="thName">Common name</th><th data-i18n="thGauge">Typical gauge</th></tr>
+        <tr><th data-i18n="thCat">Категория</th><th data-i18n="thName">Обычное название</th><th data-i18n="thGauge">Типичная плотность</th></tr>
       </thead>
       <tbody>
-        <tr><td>0</td><td data-i18n="weightLace">Lace</td><td>33–40 sts / 10cm</td></tr>
-        <tr><td>1</td><td data-i18n="weightSuperfine">Super Fine / Sock</td><td>27–32 sts / 10cm</td></tr>
-        <tr><td>2</td><td data-i18n="weightFine">Fine / Sport</td><td>23–26 sts / 10cm</td></tr>
-        <tr><td>3</td><td data-i18n="weightLight">Light / DK</td><td>21–24 sts / 10cm</td></tr>
-        <tr><td>4</td><td data-i18n="weightMedium">Medium / Worsted</td><td>16–20 sts / 10cm</td></tr>
-        <tr><td>5</td><td data-i18n="weightBulky">Bulky / Chunky</td><td>12–15 sts / 10cm</td></tr>
-        <tr><td>6</td><td data-i18n="weightSuperbulky">Super Bulky</td><td>7–11 sts / 10cm</td></tr>
+        <tr><td>0</td><td data-i18n="weightLace">0 — Кружевная</td><td>33–40 sts / 10cm</td></tr>
+        <tr><td>1</td><td data-i18n="weightSuperfine">1 — Сверхтонкая (носочная)</td><td>27–32 sts / 10cm</td></tr>
+        <tr><td>2</td><td data-i18n="weightFine">2 — Тонкая (спортивная)</td><td>23–26 sts / 10cm</td></tr>
+        <tr><td>3</td><td data-i18n="weightLight">3 — Лёгкая (DK)</td><td>21–24 sts / 10cm</td></tr>
+        <tr><td>4</td><td data-i18n="weightMedium">4 — Средняя (Worsted)</td><td>16–20 sts / 10cm</td></tr>
+        <tr><td>5</td><td data-i18n="weightBulky">5 — Объёмная (Chunky)</td><td>12–15 sts / 10cm</td></tr>
+        <tr><td>6</td><td data-i18n="weightSuperbulky">6 — Сверхобъёмная</td><td>7–11 sts / 10cm</td></tr>
       </tbody>
     </table>
   </section>
 
   <section>
-    <h2 data-i18n="patternsTitle">How stitch pattern affects yarn usage</h2>
-    <p data-i18n="patternsText">Different stitch patterns consume yarn at very different rates. Compared to a smooth stockinette base:</p>
+    <h2 data-i18n="patternsTitle">Как узор влияет на расход пряжи</h2>
+    <p data-i18n="patternsText">Разные узоры расходуют пряжу с разной скоростью. Относительно лицевой глади:</p>
     <ul>
-      <li data-i18n="patGarter"><strong>Garter stitch:</strong> +5%</li>
-      <li data-i18n="patRibbing"><strong>Ribbing (1x1, 2x2):</strong> +15%</li>
-      <li data-i18n="patSeed"><strong>Seed stitch:</strong> +20%</li>
-      <li data-i18n="patCable"><strong>Cable:</strong> +35%</li>
-      <li data-i18n="patBrioche"><strong>Brioche / Fisherman:</strong> +60%</li>
-      <li data-i18n="patLace"><strong>Lace / Openwork:</strong> -15%</li>
+      <li data-i18n="patGarter">Платочная вязка: +5%</li>
+      <li data-i18n="patRibbing">Резинка (1x1, 2x2): +15%</li>
+      <li data-i18n="patSeed">Жемчужный узор: +20%</li>
+      <li data-i18n="patCable">Косы: +35%</li>
+      <li data-i18n="patBrioche">Бриошь / патентная: +60%</li>
+      <li data-i18n="patLace">Кружево / ажур: -15%</li>
     </ul>
   </section>
 
   <section>
-    <h2 data-i18n="howToTitle">How to use this calculator</h2>
+    <h2 data-i18n="howToTitle">Как пользоваться</h2>
     <ol>
-      <li data-i18n="howTo1">Enter the finished width and height of your project in centimeters.</li>
-      <li data-i18n="howTo2">Select your yarn weight from the CYC standard category (check your yarn label).</li>
-      <li data-i18n="howTo3">Choose the stitch pattern that dominates your project.</li>
-      <li data-i18n="howTo4">Enter the yardage per skein from your yarn label (this varies by brand).</li>
-      <li data-i18n="howTo5">Click "Calculate yarn needed" to see total yardage and skeins to buy.</li>
+      <li data-i18n="howTo1">Введите готовую ширину и высоту проекта в сантиметрах.</li>
+      <li data-i18n="howTo2">Выберите толщину пряжи по стандарту CYC (смотрите этикетку).</li>
+      <li data-i18n="howTo3">Выберите основной узор проекта.</li>
+      <li data-i18n="howTo4">Введите метраж мотка с этикетки (зависит от бренда).</li>
+      <li data-i18n="howTo5">Нажмите «Рассчитать необходимое количество», чтобы увидеть общий метраж и число мотков.</li>
     </ol>
   </section>
 
   <section>
-    <h2 data-i18n="faqTitle">Frequently asked questions</h2>
-    <h3 data-i18n="faq1q">How much yarn do I need for a sweater?</h3>
-    <p data-i18n="faq1a">An adult medium sweater in worsted weight yarn typically requires 1,200–1,800 yards. In bulky weight, 800–1,200 yards. In fingering weight, 1,800–2,500 yards. The exact amount depends on size, length, and stitch pattern.</p>
+    <h2 data-i18n="faqTitle">Часто задаваемые вопросы</h2>
+    <h3 data-i18n="faq1q">Сколько пряжи нужно на свитер?</h3>
+    <p data-i18n="faq1a">Взрослый свитер размера M из пряжи средней толщины требует примерно 1 100–1 650 метров. Из объёмной пряжи — 730–1 100 метров. Из тонкой — 1 650–2 300 метров. Точное количество зависит от размера, длины и узора.</p>
 
-    <h3 data-i18n="faq2q">How many yards are in a skein of yarn?</h3>
-    <p data-i18n="faq2a">It varies widely by brand and weight. Common yardages: Lace 400–800, Fingering 350–450, Sport 250–350, DK 200–300, Worsted 150–250, Bulky 100–150, Super Bulky 60–100 yards per skein. Always check your yarn label.</p>
+    <h3 data-i18n="faq2q">Сколько метров в мотке?</h3>
+    <p data-i18n="faq2a">Зависит от бренда и толщины. Обычные значения: кружевная 370–730, тонкая 320–410, спортивная 230–320, DK 180–270, средняя 140–230, объёмная 90–140, сверхобъёмная 55–90 метров в мотке. Всегда проверяйте этикетку.</p>
 
-    <h3 data-i18n="faq3q">Should I add a buffer?</h3>
-    <p data-i18n="faq3a">Yes. This calculator already adds a 10% buffer. Professional knitters usually recommend buying one extra skein of the same dye lot, especially for large projects, because running out mid-project with a different dye lot can create visible color differences.</p>
+    <h3 data-i18n="faq3q">Нужно ли добавлять запас?</h3>
+    <p data-i18n="faq3a">Да. Этот калькулятор уже добавляет 10% запаса. Профессиональные вязальщицы советуют покупать лишний моток из той же партии, особенно для больших проектов, так как смена партии даёт заметную разницу в цвете.</p>
 
-    <h3 data-i18n="faq4q">Does crochet use more yarn than knitting?</h3>
-    <p data-i18n="faq4a">Yes, generally 25–30% more yarn than knitting for the same surface area. Crochet stitches are taller and denser. If you plan to crochet a pattern designed for knitting, add about 30% to the estimate.</p>
+    <h3 data-i18n="faq4q">Вязание крючком расходует больше пряжи, чем спицами?</h3>
+    <p data-i18n="faq4a">Да, обычно на 25–30% больше при той же площади. Столбики крючком выше и плотнее. Если вы вяжете крючком узор, предназначенный для спиц, добавьте около 30%.</p>
 
-    <h3 data-i18n="faq5q">Why does my finished project weigh more than predicted?</h3>
-    <p data-i18n="faq5a">Common causes: looser or tighter gauge than expected, blocking that stretches the fabric, or a heavier stitch pattern than estimated. If you're following a pattern, always knit a gauge swatch and compare your actual yarn usage after the first few rows.</p>
+    <h3 data-i18n="faq5q">Почему готовое изделие весит больше, чем предполагалось?</h3>
+    <p data-i18n="faq5a">Частые причины: более свободная или плотная вязка, растяжение при блокировке, или более тяжёлый узор. Всегда вяжите образец и сравнивайте фактический расход после первых рядов.</p>
 
-    <div class="disclaimer" data-i18n="disclaimer"><strong>Note:</strong> This is an estimate. For critical projects, always buy an extra skein and work a gauge swatch to confirm your personal yardage consumption.</div>
+    <div class="disclaimer" data-i18n="disclaimer"><strong>Примечание:</strong> Это оценка. Для важных проектов всегда покупайте лишний моток и вяжите образец.</div>
   </section>
 </main>
 
-<footer class="footer" data-i18n="footer">Runs entirely in your browser. No data is collected or stored.</footer>
+<footer class="footer" data-i18n="footer">Полностью работает в вашем браузере. Данные не собираются и не хранятся.</footer>
 
 <script src="/js/i18n.js"></script>
 <script src="/js/calculator.js"></script>
