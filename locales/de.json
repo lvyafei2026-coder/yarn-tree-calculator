@@ -64,5 +64,14 @@
   "disclaimer": "<strong>Hinweis:</strong> Dies ist eine Schätzung. Für kritische Projekte kaufen Sie immer ein Extraknäuel und stricken eine Maschenprobe.",
   "footer": "Läuft vollständig in Ihrem Browser. Es werden keine Daten gesammelt oder gespeichert.",
   "alertFill": "Bitte geben Sie eine gültige Breite und Höhe ein.",
-  "alertSkein": "Bitte geben Sie die Meter pro Knäuel ein."
+  "alertSkein": "Bitte geben Sie die Meter pro Knäuel ein.",
+  "heroBadge": "🧶 Stricken & Häkeln",
+  "gaugeUnit": "M / 10 cm",
+  "weightLaceName": "Lace",
+  "weightSuperfineName": "Super Fine (Socken)",
+  "weightFineName": "Fine (Sport)",
+  "weightLightName": "Light (DK)",
+  "weightMediumName": "Medium (Worsted)",
+  "weightBulkyName": "Bulky (Chunky)",
+  "weightSuperbulkyName": "Super Bulky"
 }

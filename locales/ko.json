@@ -64,5 +64,14 @@
   "disclaimer": "<strong>참고:</strong> 추정치입니다. 중요한 프로젝트의 경우 한 볼 더 구매하고 게이지 스와치를 떠서 실제 사용량을 확인하세요.",
   "footer": "전적으로 브라우저에서 실행됩니다. 데이터를 수집하거나 저장하지 않습니다.",
   "alertFill": "유효한 너비와 높이를 입력하세요.",
-  "alertSkein": "볼당 야드를 입력하세요."
+  "alertSkein": "볼당 야드를 입력하세요.",
+  "heroBadge": "🧶 뜨개질과 코바늘",
+  "gaugeUnit": "코 / 10cm",
+  "weightLaceName": "레이스",
+  "weightSuperfineName": "극세 (양말)",
+  "weightFineName": "가는 (스포츠)",
+  "weightLightName": "중간 (DK)",
+  "weightMediumName": "중간굵기 (워스티드)",
+  "weightBulkyName": "굵은 (청키)",
+  "weightSuperbulkyName": "극굵"
 }

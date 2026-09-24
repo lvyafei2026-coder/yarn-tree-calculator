@@ -64,5 +64,14 @@
   "disclaimer": "<strong>Nota:</strong> Esta es una estimación. Para proyectos críticos, siempre compre un ovillo extra y teja una muestra de tensión.",
   "footer": "Se ejecuta completamente en su navegador. No se recopilan ni almacenan datos.",
   "alertFill": "Por favor introduzca un ancho y alto válidos.",
-  "alertSkein": "Por favor introduzca los metros por ovillo."
+  "alertSkein": "Por favor introduzca los metros por ovillo.",
+  "heroBadge": "🧶 Tejido y ganchillo",
+  "gaugeUnit": "p. / 10 cm",
+  "weightLaceName": "Encaje",
+  "weightSuperfineName": "Súper Fina (Calcetín)",
+  "weightFineName": "Fina (Sport)",
+  "weightLightName": "Ligera (DK)",
+  "weightMediumName": "Media (Worsted)",
+  "weightBulkyName": "Gruesa (Chunky)",
+  "weightSuperbulkyName": "Súper Gruesa"
 }

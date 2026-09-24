@@ -64,5 +64,14 @@
   "disclaimer": "<strong>注意：</strong>本结果为估算值。对于关键项目，请务必多买一团并织密度样片来确认你的实际用量。",
   "footer": "完全在您的浏览器中运行。不收集、不存储任何数据。",
   "alertFill": "请输入有效的宽度和高度。",
-  "alertSkein": "请输入每团毛线的码数。"
+  "alertSkein": "请输入每团毛线的码数。",
+  "heroBadge": "🧶 编织与钩针",
+  "gaugeUnit": "针 / 10cm",
+  "weightLaceName": "蕾丝线",
+  "weightSuperfineName": "超细（袜子线）",
+  "weightFineName": "细（运动线）",
+  "weightLightName": "轻（DK 线）",
+  "weightMediumName": "中（中粗线）",
+  "weightBulkyName": "粗（粗线）",
+  "weightSuperbulkyName": "超粗"
 }

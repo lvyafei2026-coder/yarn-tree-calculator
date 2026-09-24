@@ -64,5 +64,14 @@
   "disclaimer": "<strong>注意：</strong>本結果為估算值。對於關鍵項目，請務必多買一團並織密度樣片來確認你的實際用量。",
   "footer": "完全在您的瀏覽器中運行。不收集、不儲存任何資料。",
   "alertFill": "請輸入有效的寬度和高度。",
-  "alertSkein": "請輸入每團毛線的碼數。"
+  "alertSkein": "請輸入每團毛線的碼數。",
+  "heroBadge": "🧶 編織與鉤針",
+  "gaugeUnit": "針 / 10cm",
+  "weightLaceName": "蕾絲線",
+  "weightSuperfineName": "超細（襪線）",
+  "weightFineName": "細（運動線）",
+  "weightLightName": "輕（DK 線）",
+  "weightMediumName": "中（中粗線）",
+  "weightBulkyName": "粗（粗線）",
+  "weightSuperbulkyName": "超粗"
 }

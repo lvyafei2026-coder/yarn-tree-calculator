@@ -64,5 +64,14 @@
   "disclaimer": "<strong>Note:</strong> This is an estimate. For critical projects, always buy an extra skein and work a gauge swatch to confirm your personal yardage consumption.",
   "footer": "Runs entirely in your browser. No data is collected or stored.",
   "alertFill": "Please enter a valid width and height.",
-  "alertSkein": "Please enter the yardage per skein."
+  "alertSkein": "Please enter the yardage per skein.",
+  "heroBadge": "🧶 Knitting & Crochet",
+  "gaugeUnit": "sts / 10cm",
+  "weightLaceName": "Lace",
+  "weightSuperfineName": "Super Fine (Sock)",
+  "weightFineName": "Fine (Sport)",
+  "weightLightName": "Light (DK)",
+  "weightMediumName": "Medium (Worsted)",
+  "weightBulkyName": "Bulky (Chunky)",
+  "weightSuperbulkyName": "Super Bulky"
 }

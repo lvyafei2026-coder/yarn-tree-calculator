@@ -64,5 +64,14 @@
   "disclaimer": "<strong>注意：</strong>これは推定値です。重要なプロジェクトでは、必ず1玉多く購入し、ゲージスワッチを編んで実際の消費量を確認してください。",
   "footer": "すべてブラウザ内で実行されます。データの収集・保存は行いません。",
   "alertFill": "有効な幅と高さを入力してください。",
-  "alertSkein": "1玉あたりのヤード数を入力してください。"
+  "alertSkein": "1玉あたりのヤード数を入力してください。",
+  "heroBadge": "🧶 編み物とかぎ針編み",
+  "gaugeUnit": "目 / 10cm",
+  "weightLaceName": "レース",
+  "weightSuperfineName": "極細（ソック）",
+  "weightFineName": "細（スポーツ）",
+  "weightLightName": "並太（DK）",
+  "weightMediumName": "中太（ウーステッド）",
+  "weightBulkyName": "太（チャンキー）",
+  "weightSuperbulkyName": "極太"
 }
